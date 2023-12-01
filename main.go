@@ -1,24 +1,29 @@
 package main
 
 import (
-	"AoC/days/day_1"
 	"fmt"
 	"os"
 	"strings"
+
+	"AoC/days"
 )
 
 func main() {
-	lines, err := getData("days/day_1/day_1_input.txt")
-	if err != nil {
-		fmt.Println("File reading error", err)
-		return
+	getResultForDay(1)
+}
+
+func getResultForDay(day int) {
+	lines, _ := getData(fmt.Sprintf("inputs/day_%v.txt", day))
+
+	switch day {
+	case 1:
+		fmt.Printf("Day 1.1: %v\n", days.T_1_1(lines))
+		fmt.Printf("Day 1.2: %v\n", days.T_1_2(lines))
+	case 2:
+		fmt.Printf("Day 2.1: %v\n", days.T_2_1(lines))
+		fmt.Printf("Day 2.2: %v\n", days.T_2_2(lines))
+
 	}
-
-	result1 := day_1.T_1(lines)
-	result2 := day_1.T_2(lines)
-
-	fmt.Printf("Day 1.1: %v\n", result1)
-	fmt.Printf("Day 1.2: %v\n", result2)
 }
 
 func getData(filepath string) ([]string, error) {

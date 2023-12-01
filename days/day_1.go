@@ -1,4 +1,4 @@
-package day_1
+package days
 
 import (
 	"strconv"
@@ -27,7 +27,7 @@ func NewDigitNumbers() *DigitNumbers {
 	}
 }
 
-func T_1(lines []string) int {
+func T_1_1(lines []string) int {
 	sum := 0
 	for _, line := range lines {
 		firstNumber, lastNumber := processLines(line)
@@ -37,7 +37,7 @@ func T_1(lines []string) int {
 	return sum
 }
 
-func T_2(lines []string) int {
+func T_1_2(lines []string) int {
 	sum := 0
 	for _, line := range lines {
 		processedLine := replaceSpelledOutNumbers(line)
