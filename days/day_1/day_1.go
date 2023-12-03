@@ -1,4 +1,4 @@
-package days
+package day_1
 
 import (
 	"strconv"
@@ -7,12 +7,12 @@ import (
 )
 
 type DigitNumbers struct {
-	numbers map[string]int
+	Numbers map[string]int
 }
 
-func NewDigitNumbers() *DigitNumbers {
+func newDigitNumbers() *DigitNumbers {
 	return &DigitNumbers{
-		numbers: map[string]int{
+		Numbers: map[string]int{
 			"zero":  0,
 			"one":   1,
 			"two":   2,
@@ -49,10 +49,10 @@ func T_1_2(lines []string) int {
 }
 
 func replaceSpelledOutNumbers(line string) string {
-	digit := NewDigitNumbers()
+	digit := newDigitNumbers()
 	var result []string
-	var currentNum string
 
+	var currentNum string
 	for idx, char := range line {
 		currentNum += string(char)
 
@@ -62,7 +62,7 @@ func replaceSpelledOutNumbers(line string) string {
 		}
 
 		if shouldCheckForSuffix(idx, char) {
-			for word, number := range digit.numbers {
+			for word, number := range digit.Numbers {
 				if strings.HasSuffix(currentNum, word) {
 					result = append(result, strconv.Itoa(number))
 					currentNum = string(char)
@@ -81,8 +81,7 @@ func shouldCheckForSuffix(idx int, char rune) bool {
 }
 
 func processLines(line string) (int, int) {
-	firstNumber := 0
-	lastNumber := 0
+	var firstNumber, lastNumber int
 
 	for _, char := range line {
 		if unicode.IsDigit(char) {
