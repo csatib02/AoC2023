@@ -1,4 +1,4 @@
-package day_3
+package day_4
 
 import (
 	"testing"
@@ -14,7 +14,7 @@ func TestPart1(t *testing.T) {
 		input    string
 	}{
 		{
-			expected: 4361,
+			expected: 13,
 			input:    "test_input/test.txt",
 		},
 	}
@@ -23,7 +23,7 @@ func TestPart1(t *testing.T) {
 		lines, err := util.GetData(test.input)
 
 		assert.NoError(t, err, test.input)
-		assert.Equal(t, test.expected, T_3_1(lines))
+		assert.Equal(t, test.expected, T_4_1(lines))
 	}
 }
 
@@ -33,7 +33,7 @@ func TestPart2(t *testing.T) {
 		input    string
 	}{
 		{
-			expected: 467835,
+			expected: 30,
 			input:    "test_input/test.txt",
 		},
 	}
@@ -42,6 +42,6 @@ func TestPart2(t *testing.T) {
 		lines, err := util.GetData(test.input)
 
 		assert.NoError(t, err, test.input)
-		assert.Equal(t, test.expected, T_3_2(lines))
+		assert.Equal(t, test.expected, T_4_2(lines))
 	}
 }
