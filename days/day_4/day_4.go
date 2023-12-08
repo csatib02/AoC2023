@@ -1,19 +1,18 @@
 package day_4
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
 )
 
 type Cards struct {
-	allCards []Card
+	AllCards []Card
 }
 
 type Card struct {
 	Order                int
-	countOfWinnerNumbers int
+	CountOfWinnerNumbers int
 }
 
 func T_4_1(lines []string) int {
@@ -40,18 +39,16 @@ func T_4_2(lines []string) int {
 		winningNumbers, numbersHave := splitBySeperator(line)
 		winningNumbersMap := makeMapOfNumbers(winningNumbers)
 		numbersHaveMap := makeMapOfNumbers(numbersHave)
-		card.countOfWinnerNumbers = checkForWinningNumbers(numbersHaveMap, winningNumbersMap)
+		card.CountOfWinnerNumbers = checkForWinningNumbers(numbersHaveMap, winningNumbersMap)
 
-		cards.allCards = append(cards.allCards, card)
+		cards.AllCards = append(cards.AllCards, card)
 	}
 
-	for _, card := range cards.allCards {
+	for _, card := range cards.AllCards {
 		// Instead of points we get more cards below
 		// the order number of the winning card
 		// the amount of cards won is determined by the count of winning numbers
 		scratchcardsWon := cards.processCard(card)
-		fmt.Println(card)
-		fmt.Println(scratchcardsWon)
 		sum += scratchcardsWon
 	}
 
@@ -113,7 +110,7 @@ func calculatePoints(countOfWinnerNumbers int) int {
 }
 
 func (Cards Cards) findByOrderNumber(orderNumber int) Card {
-	for _, card := range Cards.allCards {
+	for _, card := range Cards.AllCards {
 		if card.Order == orderNumber {
 			return card
 		}
@@ -125,9 +122,9 @@ func (Cards Cards) findByOrderNumber(orderNumber int) Card {
 func (Cards Cards) processCard(card Card) int {
 	orderNumber := card.Order
 	count := 1
-	if card.countOfWinnerNumbers > 0 {
+	if card.CountOfWinnerNumbers > 0 {
 		// Get all cards below the winning card
-		for i := 0; i < card.countOfWinnerNumbers; i++ {
+		for i := 0; i < card.CountOfWinnerNumbers; i++ {
 			orderNumber++
 			count += Cards.processCard(Cards.findByOrderNumber(orderNumber))
 		}
