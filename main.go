@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	getResultForDay(5)
+	getResultForDay(6)
 }
 
 func getResultForDay(day int) {

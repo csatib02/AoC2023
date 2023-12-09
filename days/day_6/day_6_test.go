@@ -33,7 +33,7 @@ func TestPart2(t *testing.T) {
 		input    string
 	}{
 		{
-			expected: 46,
+			expected: 71503,
 			input:    "test_input/test.txt",
 		},
 	}
