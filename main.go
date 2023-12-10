@@ -9,11 +9,12 @@ import (
 	"AoC/days/day_4"
 	"AoC/days/day_5"
 	"AoC/days/day_6"
+	"AoC/days/day_7"
 	"AoC/util"
 )
 
 func main() {
-	getResultForDay(6)
+	getResultForDay(7)
 }
 
 func getResultForDay(day int) {
@@ -38,5 +39,8 @@ func getResultForDay(day int) {
 	case 6:
 		fmt.Printf("Day 6.1: %v\n", day_6.T_6_1(lines))
 		fmt.Printf("Day 6.2: %v\n", day_6.T_6_2(lines))
+	case 7:
+		fmt.Printf("Day 7.1: %v\n", day_7.T_7_1(lines))
+		fmt.Printf("Day 7.2: %v\n", day_7.T_7_2(lines))
 	}
 }
