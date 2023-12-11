@@ -15,7 +15,7 @@ func TestPart1(t *testing.T) {
 	}{
 		{
 			expected: 6,
-			input:    "test_input/test.txt",
+			input:    "test_input/test_1.txt",
 		},
 	}
 
@@ -33,8 +33,8 @@ func TestPart2(t *testing.T) {
 		input    string
 	}{
 		{
-			expected: 5905,
-			input:    "test_input/test.txt",
+			expected: 6,
+			input:    "test_input/test_2.txt",
 		},
 	}
 
