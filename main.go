@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	getResultForDay(5)
+	getResultForDay(2)
 }
 
 func getResultForDay(day int) {
