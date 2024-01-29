@@ -1,7 +1,6 @@
 package day_7
 
 import (
-	"fmt"
 	"sort"
 	"strconv"
 	"strings"
@@ -475,8 +474,6 @@ func (hand *Hand) updateHand(labelCombinations []string) {
 	for _, label := range labelCombinations {
 		updatedHand = strings.Replace(updatedHand, label, "", -1)
 	}
-	fmt.Println(hand.Cards)
-	fmt.Println(updatedHand)
 	hand.RemainingCards = updatedHand
 }
 
@@ -487,7 +484,6 @@ func orderAndRankWithinGroup(group map[string][]*Hand, length int, groupLabel st
 
 	for i, hand := range group[groupLabel] {
 		hand.Rank = length - i
-		fmt.Println(hand.Strength, hand.Rank, hand.Cards)
 	}
 
 	sort.Slice(group[groupLabel], func(i, j int) bool {
